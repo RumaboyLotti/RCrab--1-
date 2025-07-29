@@ -18,7 +18,7 @@ Organizes files in the current directory based on file extensions.
 
 ### Rust Concepts
 
-- [`std::fs`](https://doc.rust-lang.org/std/fs/) for file manipulation
+- [`std::fs`]("https://doc.rust-lang.org/std/fs/ " ) for file manipulation
 - Pattern matching on file extensions
 - Error handling with `Result` and `?`
 
@@ -32,16 +32,16 @@ cargo run --bin file_sorter
 ### Explains HTTP status codes passed as command-line arguments.
 
 ### Features
-Input: numeric status code (e.g. 404)
+- Input: numeric status code `(e.g. 404)`
 
-Output: string explanation ("Not Found")
+- Output: string explanation `(Not Found)`
 
 ### Rust Concepts
-CLI input via std::env::args
+- CLI input via [`std::env::arg `] ("https://doc.rust-lang.org/beta/std/env/fn.args.html")
 
-enum to represent known status codes
+- enum to represent known status codes
 
-Pattern matching & modular design
+- Pattern matching & modular design
 
 ### Run It
 ```bash 
