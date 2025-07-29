@@ -26,3 +26,24 @@ Organizes files in the current directory based on file extensions.
 
 ```bash
 cargo run --bin file_sorter
+```
+-- 
+## Project 2: HTTP Status Code Explainer
+### Explains HTTP status codes passed as command-line arguments.
+
+### Features
+Input: numeric status code (e.g. 404)
+
+Output: string explanation ("Not Found")
+
+### Rust Concepts
+CLI input via std::env::args
+
+enum to represent known status codes
+
+Pattern matching & modular design
+
+### Run It
+```bash 
+cargo run --bin http_explainer 404
+```
