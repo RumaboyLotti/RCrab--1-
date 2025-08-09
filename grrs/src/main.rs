@@ -1,5 +1,9 @@
+use std::collections::HashMap;
+// use std::any::type_name;
 // use std;
 use chrono::{DateTime, Local};
+use std::str;
+use std::collections::HashSet;
 
 /*
 rust comments
@@ -30,8 +34,28 @@ In Rust, -> means “returns”.
 [] = arr
 mut is for mutability
 A slice is a reference to a section of a collection, not a copy.
+Option is about Some or None (value or no value)
+Result is about Ok or Err (result or error result)
+The question mark (?) operator is a shorthand for returning the Result. It can only be applied to Result<T, E> and Option<T> type.
+
+" {}" represents the value of a string
+Ampersand (&) represents references, and they allow us to refer to some value without taking ownership of it.\
 
  */
+
+//  struct User {
+//     name: String,
+//     city: String,
+//     country: String,
+//
+// }
+
+// fn print_user(user: &User) {
+//     let User {
+//         name, city, country
+//     } = user;
+//     println!("User {} is from {}, {}", name, city, country);
+// }
 
 
 
@@ -49,6 +73,8 @@ fn process(numbers: &[i32]) {
         println!("Processed: {}", n * 2);
     }
 }
+
+// const student_info: (&str, u8, f32) = ("Ricky", 21, 3.56);
 
 fn count() {
     let mut number = 0;
@@ -74,6 +100,24 @@ fn bad_print(msg: &str) {
 
 
 fn main() {
+
+    let mut color: HashSet<String> = HashSet::new();
+    let mut fruits: HashMap<i32, String> = HashMap::new();
+
+
+    println!("HashSet = {:?}", color);
+
+
+    fruits.insert(1, String::from("apple"));
+    fruits.insert(2, String::from("pear"));
+
+    for fruit in  fruits.values() {
+        println!("{}", fruit);
+    }
+
+    println!("Length of fruits = {}",fruits.len());
+
+
     println!("Hello, world!");
     // print!("hi");
     let local: DateTime<Local> = Local::now();
@@ -83,5 +127,25 @@ fn main() {
     count();
     let data = [3, -1, 5, -4, 0, 8, 9];
     process(&data);
+    // let user =  User {
+    //    city: String::from('florissant'),
+    //    country: "us".to_string(),
+    //     name : "ladi".to_string(),
+    //
+    // };
+
+    let word = String::from("Hello, World");// print_user(user);
+    // println!("{} ", user.country +  &*user.name + &*user.city);
+
+    let hello_world = "Hello, World!";
+
+    println!("{}", hello_world);
+    println!("{}", word);
+
+    let mut owned_string: String = "hello ".to_owned();
+    let borrowed_string: &str = "world";
+
+    owned_string.push_str(borrowed_string);
+    println!("{owned_string}");
 
 }
